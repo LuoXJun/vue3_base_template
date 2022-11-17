@@ -1,0 +1,52 @@
+{
+  "compilerOptions": {
+    "typeRoots": [
+      "node_modules/@types", // 默认值
+      "src/types"
+    ],
+    // 将每个文件作为单独的模块
+    "isolatedModules": true,
+    "skipLibCheck": true,
+    "importHelpers": false,
+    "target": "esnext",
+    "useDefineForClassFields": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
+    "jsx": "preserve",
+    "allowJs": true,
+    "checkJs": true,
+    "declaration": false,
+    // 存在隐式any时报错
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    // 函数隐式any报错
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    // 未使用的变量抛出错误
+    "noUnusedLocals": true,
+    // 未使用的参数报错
+    "noUnusedParameters": true,
+    // 不是所有函数都有返回值时报错
+    "noImplicitReturns": false,
+    "sourceMap": true,
+    "removeComments": true,
+    "resolveJsonModule": true,
+    "skipDefaultLibCheck": false,
+    "esModuleInterop": true,
+    "lib": ["esnext", "dom"],
+    "baseUrl": "./",
+    "types": ["node", "axios", "element-plus/global"],
+    "paths": {
+      "@": ["src"],
+      "@/*": ["src/*"]
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "./*.d.ts"
+  ]
+}
