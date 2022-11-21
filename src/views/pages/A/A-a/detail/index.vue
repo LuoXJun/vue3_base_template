@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div @click="goPath">detail</div>
+    <div @click="goPath">detail（click me reback）</div>
     <div>{{ $route.query }}</div>
   </div>
 </template>

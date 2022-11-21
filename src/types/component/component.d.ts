@@ -7,8 +7,10 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    BaseDialog: typeof import('./../../components/base-dialog/base-dialog.vue')['default']
     BaseForm: typeof import('./../../components/base-form/baseForm.vue')['default']
     BaseList: typeof import('./../../components/base-list/base-list.vue')['default']
+    BasePage: typeof import('./../../components/base-page/base-page.vue')['default']
     BaseTable: typeof import('./../../components/base-table/base-table.vue')['default']
     BaseUpload: typeof import('./../../components/base-upload/base-upload.vue')['default']
     ElAside: typeof import('element-plus/es')['ElAside']
@@ -21,6 +23,7 @@ declare module '@vue/runtime-core' {
     ElCol: typeof import('element-plus/es')['ElCol']
     ElContainer: typeof import('element-plus/es')['ElContainer']
     ElDatePicker: typeof import('element-plus/es')['ElDatePicker']
+    ElDialog: typeof import('element-plus/es')['ElDialog']
     ElDrawer: typeof import('element-plus/es')['ElDrawer']
     ElForm: typeof import('element-plus/es')['ElForm']
     ElFormItem: typeof import('element-plus/es')['ElFormItem']
@@ -31,11 +34,13 @@ declare module '@vue/runtime-core' {
     ElMenu: typeof import('element-plus/es')['ElMenu']
     ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
     ElOption: typeof import('element-plus/es')['ElOption']
+    ElPagination: typeof import('element-plus/es')['ElPagination']
     ElRadio: typeof import('element-plus/es')['ElRadio']
     ElRadioGroup: typeof import('element-plus/es')['ElRadioGroup']
     ElRow: typeof import('element-plus/es')['ElRow']
     ElSelect: typeof import('element-plus/es')['ElSelect']
     ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
+    ElTableColumn: typeof import('element-plus/es')['ElTableColumn']
     ElTag: typeof import('element-plus/es')['ElTag']
     HeaderNav: typeof import('./../../components/headerNav.vue')['default']
     LeftMenu: typeof import('./../../components/leftMenu.vue')['default']

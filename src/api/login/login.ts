@@ -6,5 +6,5 @@ export const codeIndex = () => {
 }
 // 获取标签列表
 export const loginApi = (data: any) => {
-  return request.post(`/marketServer/sys/marketLogin`, data)
+  return request.post(`/marketServer/sys/marketLogin1`, data)
 }
