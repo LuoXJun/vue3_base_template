@@ -57,6 +57,10 @@ watch(pageInfo, () => {
   getForm()
 })
 const getForm = () => {
+  pageInfo.value = {
+    pageIndex: 1,
+    pageSize: 10
+  }
   emit('getForm', form.value)
 }
 </script>
