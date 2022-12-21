@@ -17,20 +17,20 @@
 </template>
 
 <script setup lang="ts">
-import basePageVue from '@/components/base-page/base-page.vue'
-import baseDialogVue from '@/components/base-dialog/base-dialog.vue'
-import { formConfig, tableConfig } from './config'
-const total = ref(0)
-const dialogVisibility = ref(false)
-const tableData = ref([{ name: 13213123 }, { name: 199999 }])
+import basePageVue from '@/components/base-page/base-page.vue';
+import baseDialogVue from '@/components/base-dialog/base-dialog.vue';
+import { formConfig, tableConfig } from './config';
+const total = ref(0);
+const dialogVisibility = ref(false);
+const tableData = ref([{ name: 13213123 }, { name: 199999 }]);
 
 const getForm = (form: Record<string, any>) => {
-  console.log(form)
-}
+  console.log(form);
+};
 
 const confirm = () => {
-  console.log(123)
-}
+  console.log(123);
+};
 </script>
 
 <style scoped></style>

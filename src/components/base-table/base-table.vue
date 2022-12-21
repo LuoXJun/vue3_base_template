@@ -66,9 +66,9 @@
 </template>
 
 <script setup lang="ts">
-import { ElTable } from 'element-plus'
-import { PropType } from 'vue'
-const emits = defineEmits(['selected', 'update:modelValue'])
+import { ElTable } from 'element-plus';
+import { PropType } from 'vue';
+const emits = defineEmits(['selected', 'update:modelValue']);
 
 const props = defineProps({
   tableData: {
@@ -100,10 +100,10 @@ const props = defineProps({
   headerCellStyle: {
     type: Function as PropType<
       (data: {
-        row: any
-        rowIndex: number
-        column: any
-        columnIndex: number
+        row: any;
+        rowIndex: number;
+        column: any;
+        columnIndex: number;
       }) => Record<string, any>
     >,
     default: () => ({})
@@ -111,10 +111,10 @@ const props = defineProps({
   cellStyle: {
     type: Function as PropType<
       (data: {
-        row: any
-        rowIndex: number
-        column: any
-        columnIndex: number
+        row: any;
+        rowIndex: number;
+        column: any;
+        columnIndex: number;
       }) => Record<string, any>
     >,
     default: () => ({})
@@ -134,8 +134,8 @@ const props = defineProps({
     type: Array as PropType<number[]>,
     default: () => [10, 20, 40, 50]
   }
-})
-const multipleTableRef = ref<InstanceType<typeof ElTable>>()
+});
+const multipleTableRef = ref<InstanceType<typeof ElTable>>();
 
 watch(
   props.multipleSelection,
@@ -143,30 +143,30 @@ watch(
     nextTick(() => {
       if (props.multipleSelection.length > 0) {
         props.multipleSelection.forEach((row) => {
-          multipleTableRef.value!.toggleRowSelection(row, true)
-        })
+          multipleTableRef.value!.toggleRowSelection(row, true);
+        });
       }
-    })
+    });
   },
   { immediate: true }
-)
+);
 
 const handleSelectionChange = (value: any) => {
-  emits('selected', { value, type: 'change' })
-}
+  emits('selected', { value, type: 'change' });
+};
 const select = (value: any, row: any) => {
-  emits('selected', { value, row, type: 'select' })
-}
+  emits('selected', { value, row, type: 'select' });
+};
 const selectAll = (value: any) => {
-  emits('selected', { value, type: 'selectAll' })
-}
+  emits('selected', { value, type: 'selectAll' });
+};
 
 const handleCurrentChange = (val: number) => {
-  emits('update:modelValue', { ...props.pageInfo, pageIndex: val })
-}
+  emits('update:modelValue', { ...props.pageInfo, pageIndex: val });
+};
 const handleSizeChange = (val: number) => {
-  emits('update:modelValue', { ...props.pageInfo, pageSize: val })
-}
+  emits('update:modelValue', { ...props.pageInfo, pageSize: val });
+};
 </script>
 
 <style lang="scss">

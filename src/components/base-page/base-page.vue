@@ -24,10 +24,10 @@
   </div>
 </template>
 <script setup lang="ts">
-import baseForm from '@/components/base-form/baseForm.vue'
-import baseTable from '@/components/base-table/base-table.vue'
-import { PropType } from 'vue'
-const emit = defineEmits(['getForm'])
+import baseForm from '@/components/base-form/baseForm.vue';
+import baseTable from '@/components/base-table/base-table.vue';
+import { PropType } from 'vue';
+const emit = defineEmits(['getForm']);
 defineProps({
   formConfig: {
     type: Array as PropType<IformItem[]>,
@@ -45,23 +45,23 @@ defineProps({
     type: Number,
     default: 0
   }
-})
+});
 
-const form = ref<Record<string, any>>({})
+const form = ref<Record<string, any>>({});
 const pageInfo = ref({
   pageIndex: 1,
   pageSize: 10
-})
+});
 
 watch(pageInfo, () => {
-  getForm()
-})
+  getForm();
+});
 const getForm = () => {
   pageInfo.value = {
     pageIndex: 1,
     pageSize: 10
-  }
-  emit('getForm', form.value)
-}
+  };
+  emit('getForm', form.value);
+};
 </script>
 <style scoped></style>

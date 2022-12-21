@@ -8,12 +8,12 @@
 </template>
 
 <script setup lang="ts">
-import { useMenuStore } from '@/store/userStore'
-import { routeConfig } from '@/router/config/routes1'
-const store = useMenuStore()
+import { useMenuStore } from '@/store/useMenu';
+import { routeConfig } from '@/router/config/routes1';
+const store = useMenuStore();
 const add = () => {
-  store.$state.menu = routeConfig
-}
+  store.$state.menu = routeConfig;
+};
 </script>
 
 <style scoped></style>

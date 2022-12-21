@@ -71,4 +71,4 @@ export const routeConfig: RouteOptions[] = [
     icon: 'Edit',
     component: '/D'
   }
-]
+];

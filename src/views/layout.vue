@@ -19,8 +19,8 @@
 </template>
 
 <script setup lang="ts">
-import leftMenu from '@/components/leftMenu.vue'
-import headerNav from '@/components/headerNav.vue'
+import leftMenu from '@/components/leftMenu.vue';
+import headerNav from '@/components/headerNav.vue';
 </script>
 
 <style lang="scss">

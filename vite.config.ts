@@ -1,14 +1,14 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import AutoImport from 'unplugin-auto-import/vite'
-import Components from 'unplugin-vue-components/vite'
-import unElementPlus from 'unplugin-element-plus/vite'
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
-import ElementPlus from 'unplugin-element-plus/vite'
-import Icons from 'unplugin-icons/vite'
-import IconsResolver from 'unplugin-icons/resolver'
-import { UserConfigExport } from 'vite'
-import * as path from 'path'
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import AutoImport from 'unplugin-auto-import/vite';
+import Components from 'unplugin-vue-components/vite';
+import unElementPlus from 'unplugin-element-plus/vite';
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers';
+import ElementPlus from 'unplugin-element-plus/vite';
+import Icons from 'unplugin-icons/vite';
+import IconsResolver from 'unplugin-icons/resolver';
+import { UserConfigExport } from 'vite';
+import * as path from 'path';
 
 const plugins = [
   vue(),
@@ -35,7 +35,7 @@ const plugins = [
   Icons({
     autoInstall: true
   })
-]
+];
 
 const config: UserConfigExport = {
   plugins,
@@ -61,14 +61,14 @@ const config: UserConfigExport = {
     hmr: true,
     proxy: {
       '^/dev': {
-        target: 'http://139.9.29.161/',
+        target: 'http://192.168.3.65:8808',
         secure: false,
         changeOrigin: true,
-        rewrite: (path: string) => path.replace(/^\/dev/, '/marketServer')
+        rewrite: (path: string) => path.replace(/^\/dev/, '')
       }
     }
   }
-}
+};
 
 const buildConfig: UserConfigExport = {
   build: {
@@ -82,9 +82,7 @@ const buildConfig: UserConfigExport = {
         entryFileNames: 'static/js/[name]-[hash].js',
         assetFileNames: 'static/[ext]/name-[hash].[ext]',
         manualChunks: {
-          // 分包
           vue: ['vue', 'vue-router', 'pinia', 'axios'],
-          // ElementPlus: ['element-plus'],
           lodash: ['lodash']
         }
       }
@@ -93,22 +91,22 @@ const buildConfig: UserConfigExport = {
   esbuild: {
     drop: ['debugger', 'console']
   }
-}
+};
 
 export default defineConfig(({ command }) => {
   if (command === 'serve') {
-    return config
+    return config;
   } else {
     plugins.push(
       unElementPlus({
         useSource: true
       })
-    )
+    );
     plugins.push(
       Components({
         resolvers: [ElementPlusResolver()]
       })
-    )
-    return { ...config, ...buildConfig }
+    );
+    return { ...config, ...buildConfig };
   }
-})
+});

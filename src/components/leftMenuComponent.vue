@@ -34,9 +34,9 @@
   </template>
 </template>
 <script setup lang="ts">
-import * as icons from '@element-plus/icons-vue'
-import { PropType } from 'vue'
-import type { RouteRecordRaw } from 'vue-router'
+import * as icons from '@element-plus/icons-vue';
+import { PropType } from 'vue';
+import type { RouteRecordRaw } from 'vue-router';
 // 不想再路由中将路径写成/a/b/c的形式，需要在递归时带上父级路径
 defineProps({
   list: {
@@ -47,14 +47,14 @@ defineProps({
     type: String,
     default: null
   }
-})
+});
 
 // 获取当前注册的组件
 const getComponent = (value: string) => {
   for (const key in icons) {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
-    if (key == value) return icons[key]
+    if (key == value) return icons[key];
   }
-}
+};
 </script>

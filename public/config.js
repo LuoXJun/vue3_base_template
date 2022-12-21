@@ -3,5 +3,5 @@ window.BASE_URL = {
   prodUrl: '',
   // 测试环境访问本地文件前置路径
   testUrl: ''
-}
-window.TIME_OUT = 30000
+};
+window.TIME_OUT = 30000;

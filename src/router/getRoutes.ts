@@ -4,15 +4,15 @@
  * 2、作为菜单按钮渲染  type==link
  * 3、作为菜单按钮级别页面的子页面  由于菜单递归不对按钮级别页面的子级做递归，所以默认不显示在菜单
  */
-import { RouteRecordRaw, RouterView } from 'vue-router'
-import router from '@/router'
-import Layout from '@/views/layout.vue'
-const views = import.meta.glob('../views/pages/**/*.vue')
-const Null = import.meta.glob('../views/Null.vue')
+import { RouteRecordRaw, RouterView } from 'vue-router';
+import router from '@/router';
+import Layout from '@/views/layout.vue';
+const views = import.meta.glob('../views/pages/**/*.vue');
+const Null = import.meta.glob('../views/Null.vue');
 
 // 解析菜单构建路由表
 export const getRoutes = (menus: RouteOptions[]) => {
-  const routes: RouteRecordRaw[] = []
+  const routes: RouteRecordRaw[] = [];
   for (const menu of menus) {
     const obj: RouteRecordRaw = {
       path: menu.path,
@@ -30,15 +30,15 @@ export const getRoutes = (menus: RouteOptions[]) => {
         isHidden: menu.isHidden || false
       },
       children: []
-    }
+    };
 
     if (menu.children && menu.children.length > 0) {
-      obj.children.push(...getRoutes(menu.children))
+      obj.children.push(...getRoutes(menu.children));
     }
-    routes.push(obj)
+    routes.push(obj);
   }
-  return routes
-}
+  return routes;
+};
 
 // 获取路径对应的component
 // export const getStoreRoutes = (
@@ -72,9 +72,9 @@ export const setRoute = (routes: RouteRecordRaw[]) => {
     redirect: '/index',
     component: Layout,
     children: []
-  }
+  };
   routes.forEach((route) => {
-    layout.children.push(route)
-  })
-  router.addRoute(layout)
-}
+    layout.children.push(route);
+  });
+  router.addRoute(layout);
+};

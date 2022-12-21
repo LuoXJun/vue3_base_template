@@ -6,13 +6,13 @@
 </template>
 
 <script setup lang="ts">
-const router = useRouter()
+const router = useRouter();
 
 const goPath = () => {
   router.push({
     path: '/A/A-a'
-  })
-}
+  });
+};
 </script>
 
 <style scoped></style>

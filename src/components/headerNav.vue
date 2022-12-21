@@ -18,17 +18,17 @@
 </template>
 
 <script setup lang="ts">
-import { ArrowRight } from '@element-plus/icons-vue'
-import { RouteRecord } from 'vue-router'
-const router = useRouter()
+import { ArrowRight } from '@element-plus/icons-vue';
+import { RouteRecord } from 'vue-router';
+const router = useRouter();
 const logout = () => {
-  router.push('/login')
-}
+  router.push('/login');
+};
 
 const goPath = (row: RouteRecord) => {
-  if (row.meta.type == 'menu') return
-  router.push(row.path)
-}
+  if (row.meta.type == 'menu') return;
+  router.push(row.path);
+};
 </script>
 <style lang="scss" scoped>
 .header-nav {

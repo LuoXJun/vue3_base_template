@@ -1,20 +1,20 @@
 interface RouteOptions {
-  path: string
+  path: string;
   /**路径默认为  views/pages/**\/index.vue  */
-  component: string
-  title: string
+  component: string;
+  title: string;
   /**link：菜单按钮，menu:菜单组,other:详情页*/
-  type: 'link' | 'menu' | 'other'
+  type: 'link' | 'menu' | 'other';
   /**element图标库图标，区分大小写*/
-  icon?: string
+  icon?: string;
   // 是否隐藏菜单
-  isHidden?: boolean
-  children?: RouteOptions[]
-  name?: string
-  redirect?: string
+  isHidden?: boolean;
+  children?: RouteOptions[];
+  name?: string;
+  redirect?: string;
 }
 
 interface Icomponent {
-  path: string
-  component: () => Promise<unknown>
+  path: string;
+  component: () => Promise<unknown>;
 }

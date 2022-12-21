@@ -125,11 +125,11 @@
 </template>
 
 <script setup lang="ts">
-import { ref, PropType } from 'vue'
-import type { FormInstance, FormRules } from 'element-plus'
-import { ElMessage } from 'element-plus'
+import { ref, PropType } from 'vue';
+import type { FormInstance, FormRules } from 'element-plus';
+import { ElMessage } from 'element-plus';
 
-const emit = defineEmits(['update:modelValue'])
+const emit = defineEmits(['update:modelValue']);
 
 const props = defineProps({
   modelValue: {
@@ -160,26 +160,26 @@ const props = defineProps({
       xs: 24
     })
   }
-})
+});
 
-const baseFormRef = ref<FormInstance>()
+const baseFormRef = ref<FormInstance>();
 
 // 验证
 const validate = () => {
   return new Promise((res) => {
     baseFormRef.value?.validate((valid) => {
-      if (valid) return res(true)
-      ElMessage.warning('请完成填写表单项')
-    })
-  })
-}
+      if (valid) return res(true);
+      ElMessage.warning('请完成填写表单项');
+    });
+  });
+};
 
 // 监听变化事件，更新父组件值
 const change = ($event: any, value: any) => {
-  emit('update:modelValue', { ...props.modelValue, [value]: $event })
-}
+  emit('update:modelValue', { ...props.modelValue, [value]: $event });
+};
 
-defineExpose({ validate })
+defineExpose({ validate });
 </script>
 
 <style>

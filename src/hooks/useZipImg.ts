@@ -1,8 +1,8 @@
 // import { saveAs } from 'file-saver'
 // import JSZip from 'jszip'
 interface Iimg {
-  name: string
-  url: string
+  name: string;
+  url: string;
 }
 const useZipImg = (imgs: Iimg[], identification: string) => {
   // const zip = new JSZip() // 实例化zip
@@ -17,5 +17,5 @@ const useZipImg = (imgs: Iimg[], identification: string) => {
   //   .then(function (content: any) {
   //     saveAs(content, 'images.zip') // zip下载后的名字
   //   })
-}
-export { useZipImg }
+};
+export { useZipImg };

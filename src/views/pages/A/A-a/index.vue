@@ -7,7 +7,7 @@
 </template>
 
 <script setup lang="ts">
-const router = useRouter()
+const router = useRouter();
 const goPath = () => {
   router
     .push({
@@ -19,9 +19,9 @@ const goPath = () => {
       }
     })
     .catch((err) => {
-      console.error(err)
-    })
-}
+      console.error(err);
+    });
+};
 </script>
 
 <style scoped></style>

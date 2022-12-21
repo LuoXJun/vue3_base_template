@@ -22,8 +22,8 @@
 </template>
 
 <script setup lang="ts">
-import { PropType } from 'vue'
-const emits = defineEmits(['update:modelValue', 'confirm'])
+import { PropType } from 'vue';
+const emits = defineEmits(['update:modelValue', 'confirm']);
 
 defineProps({
   modelValue: {
@@ -43,15 +43,15 @@ defineProps({
     type: Array as PropType<string[]>,
     default: () => ['关闭', '确定']
   }
-})
+});
 
 const close = () => {
-  emits('update:modelValue', false)
-}
+  emits('update:modelValue', false);
+};
 
 const confirm = () => {
-  emits('confirm')
-}
+  emits('confirm');
+};
 </script>
 
 <style lang="scss">

@@ -41,22 +41,22 @@
 </template>
 
 <script setup lang="ts">
-import baseForm from '@/components/base-form/baseForm.vue'
-import { config } from '../config'
-import * as icons from '@element-plus/icons-vue'
-import { useMenuStore } from '@/store/userStore'
-import { ElMessage } from 'element-plus'
+import baseForm from '@/components/base-form/baseForm.vue';
+import { config } from '../config';
+import * as icons from '@element-plus/icons-vue';
+import { useMenuStore } from '@/store/useMenu';
+import { ElMessage } from 'element-plus';
 const props = defineProps({
   options: {
     type: Object,
     default: () => {
-      return {}
+      return {};
     }
   }
-})
+});
 
-const store = useMenuStore()
-const authFormRef = ref()
+const store = useMenuStore();
+const authFormRef = ref();
 const form = ref<RouteOptions & { level: string }>({
   icon: '',
   title: '',
@@ -64,54 +64,53 @@ const form = ref<RouteOptions & { level: string }>({
   component: '',
   level: '',
   type: 'link'
-})
+});
 
 watch(
   form,
   () => {
-    console.log(123)
+    console.log(123);
     props.options.forEach((item: any) => {
       if (item.label == form.value.level) {
         if (item.type !== 'menu' && form.value.type === 'menu') {
-          form.value.level = ''
-          ElMessage.warning('菜单不能作为菜单之外的子集')
+          form.value.level = '';
+          ElMessage.warning('菜单不能作为菜单之外的子集');
         }
         if (item.type == 'other' && form.value.type !== 'other') {
-          form.value.level = ''
-          ElMessage.warning('详情页的子级只能是详情页')
+          form.value.level = '';
+          ElMessage.warning('详情页的子级只能是详情页');
         }
       }
-    })
+    });
   },
   { deep: true }
-)
+);
 
 // 获取当前全部的图标
 const getComponent = () => {
-  const _arr = []
+  const _arr = [];
   for (const key in icons) {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
-    _arr.push({ label: key, value: icons[key] })
+    _arr.push({ label: key, value: icons[key] });
   }
-  return _arr
-}
+  return _arr;
+};
 
 const _recursion = (_menus: RouteOptions[]) => {
   for (const menu of _menus) {
     if (menu.path == form.value.level) {
-      if (menu.children) menu.children.push(form.value)
-      else menu.children = [form.value]
-    } else if (menu.children) _recursion(menu.children)
+      if (menu.children) menu.children.push(form.value);
+      else menu.children = [form.value];
+    } else if (menu.children) _recursion(menu.children);
   }
-}
+};
 // 提交新增的菜单
 const add = () => {
   authFormRef.value?.validate().then(() => {
-    if (form.value.level == '') return store.menu.push(form.value)
-    _recursion(store.menu)
-  })
-}
+    if (form.value.level == '') return store.menu.push(form.value);
+    _recursion(store.menu);
+  });
+};
 </script>
 
 <style scoped></style>

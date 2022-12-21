@@ -32,7 +32,7 @@
 </template>
 
 <script setup lang="ts">
-import type { PropType } from 'vue'
+import type { PropType } from 'vue';
 
 defineProps({
   list: {
@@ -43,23 +43,23 @@ defineProps({
   column: {
     type: Number,
     default: () => {
-      return 2
+      return 2;
     }
   },
   /**使用新的键值对代替label，value*/
   label: {
     type: String,
     default: () => {
-      return 'label'
+      return 'label';
     }
   },
   value: {
     type: String,
     default: () => {
-      return 'value'
+      return 'value';
     }
   }
-})
+});
 </script>
 
 <style lang="scss" scoped>

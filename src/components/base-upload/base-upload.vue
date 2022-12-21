@@ -23,14 +23,14 @@
 </template>
 
 <script setup lang="ts">
-import { PropType } from 'vue'
-import { ElMessage, ElMessageBox } from 'element-plus'
+import { PropType } from 'vue';
+import { ElMessage, ElMessageBox } from 'element-plus';
 
 const emits = defineEmits<{
-  (e: 'remove', file: UploadFiles, filelist: UploadFiles[]): void
-  (e: 'change', file: UploadFiles, filelist: UploadFiles[]): void
-  (e: 'preview', file: UploadFiles): void
-}>()
+  (e: 'remove', file: UploadFiles, filelist: UploadFiles[]): void;
+  (e: 'change', file: UploadFiles, filelist: UploadFiles[]): void;
+  (e: 'preview', file: UploadFiles): void;
+}>();
 
 const props = defineProps({
   /**数据回显或展示时后端返回的文件列表*/
@@ -51,39 +51,39 @@ const props = defineProps({
     type: String,
     default: () => '请上传文件'
   }
-})
+});
 
 // formData.append('file', new File([item.raw], item.name.replace(/\s*/g, "").replace(/\(|\)/g, '')))
 
 const onChange = (file: UploadFiles, filelist: UploadFiles[]) => {
-  const index = filelist.indexOf(file)
-  filelist.splice(index, 1)
+  const index = filelist.indexOf(file);
+  filelist.splice(index, 1);
 
   // 限制上传大小
   if (file.size! / 1024 / 2024 > props.options.size) {
-    ElMessage.warning(`上传文件大小不能超过${props.options.size}M`)
-    return
+    ElMessage.warning(`上传文件大小不能超过${props.options.size}M`);
+    return;
   }
 
   //   限制上传数量
   if (props.list.length >= props.options.limit) {
-    ElMessage.warning(`文件上传数量不能超过${props.options.limit}`)
-    return
+    ElMessage.warning(`文件上传数量不能超过${props.options.limit}`);
+    return;
   }
 
   // 限制上传类型
-  let type = file.name.substring(file.name.lastIndexOf('.') + 1).toLowerCase()
+  let type = file.name.substring(file.name.lastIndexOf('.') + 1).toLowerCase();
   if (
     props.options.fileType.length > 0 &&
     props.options.fileType.indexOf(type) == -1
   )
     return ElMessage.warning(
       `请上传${props.options.fileType.join(',')}格式的文件`
-    )
+    );
 
-  filelist.splice(index + 1, 0, file)
-  emits('change', file, filelist)
-}
+  filelist.splice(index + 1, 0, file);
+  emits('change', file, filelist);
+};
 
 const beforeRemove = (
   file: UploadFiles,
@@ -101,20 +101,20 @@ const beforeRemove = (
          * 单文件自动上传时可不设置
          * 自定义批量上传时在提交时需要区分上传的和未上传的文件
          * */
-        if (file.options?.id) return emits('remove', file, filelist)
-        ElMessage.success('删除成功')
-        res(true)
+        if (file.options?.id) return emits('remove', file, filelist);
+        ElMessage.success('删除成功');
+        res(true);
       })
       .catch(() => {
-        ElMessage.info('取消删除')
-      })
-  })
-}
+        ElMessage.info('取消删除');
+      });
+  });
+};
 
 // 预览
 const preview = (file: UploadFiles) => {
-  emits('preview', file)
-}
+  emits('preview', file);
+};
 </script>
 
 <style scoped lang="scss">

@@ -19,9 +19,9 @@
 </template>
 
 <script setup lang="ts">
-import leftMenuComponent from '@/components/leftMenuComponent.vue'
-import { getRoutes, setRoute } from '@/router/getRoutes'
-import { useMenuStore } from '@/store/userStore'
+import leftMenuComponent from '@/components/leftMenuComponent.vue';
+import { getRoutes, setRoute } from '@/router/getRoutes';
+import { useMenuStore } from '@/store/useMenu';
 
 defineProps({
   isCollapse: {
@@ -32,21 +32,21 @@ defineProps({
     type: String,
     default: ''
   }
-})
+});
 
-const store = useMenuStore()
+const store = useMenuStore();
 
-const renderList = ref()
-const parentPath = '/'
+const renderList = ref();
+const parentPath = '/';
 watch(
   store.$state,
   () => {
-    renderList.value = getRoutes(store.menu)
+    renderList.value = getRoutes(store.menu);
     // menu更新后视图和路由不同步，需注册新添加的路由
-    setRoute(getRoutes(store.menu))
+    setRoute(getRoutes(store.menu));
   },
   { immediate: true }
-)
+);
 </script>
 
 <style lang="scss">

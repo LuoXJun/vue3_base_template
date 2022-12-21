@@ -11,8 +11,8 @@ export const formConfig: IformItem[] = [
   { filed: 'daterange', label: 'daterange', type: 'daterange' },
   { filed: 'slot', label: 'slot', type: 'slot' },
   { filed: 'input', label: 'input', type: 'input' }
-]
+];
 export const tableConfig: ITableColumn[] = [
   { filed: 'name', label: 'name' },
   { filed: 'operation', label: '操作', options: { fixed: 'right' } }
-]
+];

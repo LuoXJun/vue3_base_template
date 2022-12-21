@@ -87,4 +87,4 @@ export const routeConfig: RouteOptions[] = [
     type: 'link',
     component: 'auth'
   }
-]
+];

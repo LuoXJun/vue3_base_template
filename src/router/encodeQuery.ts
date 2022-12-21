@@ -1,12 +1,12 @@
-import type { LocationQuery, LocationQueryRaw } from 'vue-router'
-import JSEncrypt from 'jsencrypt'
+import type { LocationQuery, LocationQueryRaw } from 'vue-router';
+import JSEncrypt from 'jsencrypt';
 const PUBLIC_KEY = `MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA3NmujPVOafessxYOwvhW
   iF9inFmuUXgfWPtOvtfixLYOWdcGHOWZZDB7nbRddbruCmpN6zRt4JkGBxVfscjQ
   xIyznK5dAC/8fFIAc1gdleANwf9382HaMx/aGxmrLzYLJ/5lQU7ES7n+LeuaGZRE
   Djgb8ERXSgwrusCDvVYpSHTbgS0lHtrQdqt5AhpKtgvOB+ABqCI26iAukb9b8J+y
   sNP3vN+o2nRo/q9XGAQfmP+R+qffZCNSDEOlZUEcka3OPrliruP30pUQjTxaBL7r
   XCcnrkzaZAjlm4UABDce1uTmZ7wc4Q7HnMmV4IcmqgCiZ6I54vu4EFR6HJhbXiC6
-  nwIDAQAB`
+  nwIDAQAB`;
 
 const priviate = `
   MIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDc2a6M9U5p96yz
@@ -35,19 +35,19 @@ ZEFmxMjdLALQGfhV++b1EdEM+xiFqT+X1T1WS9+bRc1ZPj1IH2YQ2n9fOGRQQ790
 C3ijgh+TCgY6pkpyP6A3AUUHAjcnFV+8qvG6CZVLzEJRxvD7f8sot3W8IdcqGPs9
 WiudhPE362bKKd9LMDZH0V77EfqRCz+B3CI6R5NUJVG0DJ3CgnBSDWrvpfngO9I9
 QqzxY2K8tBEl7o7bBwwjo83qIw==
-  `
+  `;
 
 export const stringifyQuery = (query: LocationQueryRaw): string => {
-  if (Object.keys(query).length == 0) return ''
+  if (Object.keys(query).length == 0) return '';
 
-  const jse = new JSEncrypt()
-  jse.setPublicKey(PUBLIC_KEY)
-  return jse.encrypt(JSON.stringify(query)) as string
-}
+  const jse = new JSEncrypt();
+  jse.setPublicKey(PUBLIC_KEY);
+  return jse.encrypt(JSON.stringify(query)) as string;
+};
 export const parseQuery = (query: string): LocationQuery => {
-  if (!query) return {}
+  if (!query) return {};
 
-  const jse = new JSEncrypt()
-  jse.setPrivateKey(priviate)
-  return JSON.parse(jse.decrypt(query) as string)
-}
+  const jse = new JSEncrypt();
+  jse.setPrivateKey(priviate);
+  return JSON.parse(jse.decrypt(query) as string);
+};
