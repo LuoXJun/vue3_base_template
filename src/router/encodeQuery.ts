@@ -44,6 +44,7 @@ export const stringifyQuery = (query: LocationQueryRaw): string => {
   jse.setPublicKey(PUBLIC_KEY);
   return jse.encrypt(JSON.stringify(query)) as string;
 };
+
 export const parseQuery = (query: string): LocationQuery => {
   if (!query) return {};
 

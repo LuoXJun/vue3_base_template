@@ -7,9 +7,16 @@
       :index="parentPath + item.path"
     >
       <template #title>
-        <el-icon>
-          <component :is="getComponent(item.meta?.icon as string)" />
-        </el-icon>
+        <template v-if="getComponent(item.meta?.icon as string).isElIcon">
+          <el-icon>
+            <component :is="getComponent(item.meta?.icon as string).url" />
+          </el-icon>
+        </template>
+        <template v-else>
+          <el-icon>
+            <img :src="getComponent(item.meta?.icon as string).url" />
+          </el-icon>
+        </template>
         <span style="padding-left: 10px; box-sizing: border-box">
           {{ item.meta?.title as string }}
         </span>
@@ -24,9 +31,16 @@
       v-if="item.meta?.type == 'link' && !item.meta?.isHidden"
       :index="parentPath + item.path"
     >
-      <el-icon>
-        <component :is="getComponent(item.meta?.icon as string)" />
-      </el-icon>
+      <template v-if="getComponent(item.meta?.icon as string).isElIcon">
+        <el-icon>
+          <component :is="getComponent(item.meta?.icon as string).url" />
+        </el-icon>
+      </template>
+      <template v-else>
+        <el-icon>
+          <img :src="getComponent(item.meta?.icon as string).url" />
+        </el-icon>
+      </template>
       <span style="padding-left: 10px; box-sizing: border-box">
         {{ item.meta?.title }}
       </span>
@@ -49,12 +63,26 @@ defineProps({
   }
 });
 
-// 获取当前注册的组件
-const getComponent = (value: string) => {
-  for (const key in icons) {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    if (key == value) return icons[key];
+// 菜单图标
+const keys = Reflect.ownKeys(icons);
+const getComponent = (value: string): { isElIcon: boolean; url: string } => {
+  if (keys.includes(value)) {
+    for (const key in icons) {
+      // @ts-ignore
+      if (key == value) return { isElIcon: true, url: icons[key] };
+    }
   }
+
+  const url = new URL(`../assets${value}`, import.meta.url).href;
+  return { isElIcon: false, url };
 };
 </script>
+
+<style scoped lang="scss">
+.el-sub-menu__title {
+  img {
+    width: 18px;
+    height: 18px;
+  }
+}
+</style>

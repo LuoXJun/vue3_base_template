@@ -72,7 +72,6 @@ const config: UserConfigExport = {
 
 const buildConfig: UserConfigExport = {
   build: {
-    cssCodeSplit: true,
     rollupOptions: {
       input: {
         index: path.resolve(__dirname, 'index.html')

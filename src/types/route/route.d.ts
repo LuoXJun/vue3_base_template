@@ -9,12 +9,7 @@ interface RouteOptions {
   icon?: string;
   // 是否隐藏菜单
   isHidden?: boolean;
-  children?: RouteOptions[];
   name?: string;
   redirect?: string;
-}
-
-interface Icomponent {
-  path: string;
-  component: () => Promise<unknown>;
+  children?: RouteOptions[];
 }

@@ -5,6 +5,7 @@ interface Iimg {
   url: string;
 }
 const useZipImg = (imgs: Iimg[], identification: string) => {
+  console.log(imgs, identification);
   // const zip = new JSZip() // 实例化zip
   // const img = zip.folder('imgs') // zip包内的文件夹名字
   // imgs.forEach((item) => {

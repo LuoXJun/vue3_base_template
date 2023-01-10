@@ -47,7 +47,7 @@ export const routeConfig: RouteOptions[] = [
     path: 'B',
     name: 'B',
     title: 'B',
-    icon: 'Edit',
+    icon: '/imgs/notFound.jpeg',
     type: 'menu',
     component: 'B',
     children: [

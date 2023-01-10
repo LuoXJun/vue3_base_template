@@ -2,7 +2,7 @@
  * 菜单渲染情况
  * 1、作为菜单组渲染  type==menu
  * 2、作为菜单按钮渲染  type==link
- * 3、作为菜单按钮级别页面的子页面  由于菜单递归不对按钮级别页面的子级做递归，所以默认不显示在菜单
+ * 3、作为菜单按钮级别页面的子页面
  */
 import { RouteRecordRaw, RouterView } from 'vue-router';
 import router from '@/router';
@@ -39,30 +39,6 @@ export const getRoutes = (menus: RouteOptions[]) => {
   }
   return routes;
 };
-
-// 获取路径对应的component
-// export const getStoreRoutes = (
-//   menus: RouteRecordRaw[],
-//   currentRoute = { path: '/' }
-// ) => {
-//   const routes: Icomponent[] = []
-//   for (const menu of menus) {
-//     if (menu.name != 'index') {
-//       let _path = currentRoute.path
-//       _path += menu.path + '/'
-//       const route = {
-//         path: _path,
-//         component:
-//           views[`../views/pages${_path}index.vue`] || Null[`../views/Null.vue`]
-//       }
-//       if (menu.children && menu.children.length > 0) {
-//         routes.push(...getStoreRoutes(menu.children, route))
-//       }
-//       routes.push(route)
-//     }
-//   }
-//   return routes
-// }
 
 // 注册路由
 export const setRoute = (routes: RouteRecordRaw[]) => {
