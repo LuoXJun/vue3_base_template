@@ -16,7 +16,7 @@ window.addEventListener('beforeunload', function () {
 });
 
 window.addEventListener('load', function () {
-  sessionStorage.removeItem('state')
+  sessionStorage.removeItem('state');
 });
 </script>
 
