@@ -7,9 +7,10 @@
     "build": "vite build",
     "preview": "vite preview",
     "prettier": "prettier --write .",
-    "lint": "vue-tsc --noEmit",
+    "lint": "vue-tsc --noEmit --skipLibCheck",
     "prepare": "husky install",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "git": "cz"
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.0.10",
