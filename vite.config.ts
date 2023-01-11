@@ -37,6 +37,7 @@ const plugins = [
   })
 ];
 
+// dev
 const config: UserConfigExport = {
   plugins,
   base: './',
@@ -59,6 +60,7 @@ const config: UserConfigExport = {
     host: true,
     port: 3005, //启动端口
     hmr: true,
+    open: true,
     proxy: {
       '^/dev': {
         target: 'http://192.168.3.65:8808',
@@ -70,6 +72,7 @@ const config: UserConfigExport = {
   }
 };
 
+// prod
 const buildConfig: UserConfigExport = {
   build: {
     rollupOptions: {
@@ -85,7 +88,8 @@ const buildConfig: UserConfigExport = {
           lodash: ['lodash']
         }
       }
-    }
+    },
+    sourcemap: true
   },
   esbuild: {
     drop: ['debugger', 'console']

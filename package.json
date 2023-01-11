@@ -6,7 +6,9 @@
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
-    "lint": "prettier --write ."
+    "prettier": "prettier --write .",
+    "lint": "vue-tsc --noEmit",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.0.10",
@@ -15,7 +17,6 @@
     "default-passive-events": "^2.0.0",
     "element-plus": "^2.2.17",
     "jsencrypt": "^3.3.0",
-    "mitt": "^3.0.0",
     "pinia": "^2.0.23",
     "reset.css": "^2.0.2",
     "unplugin-element-plus": "^0.4.1",
@@ -32,6 +33,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^8.7.1",
+    "husky": "^8.0.3",
     "prettier": "^2.7.1",
     "sass": "^1.55.0",
     "typescript": "^4.8.4",

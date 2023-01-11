@@ -1,7 +1,5 @@
-<!-- 在当前组件递归渲染数据 -->
 <template>
   <template v-for="item in list" :key="item">
-    <!-- 含有子级 -->
     <el-sub-menu
       v-if="item.meta?.type == 'menu' && !item.meta?.isHidden"
       :index="parentPath + item.path"
@@ -26,7 +24,6 @@
         :parent-path="parentPath + item.path + '/'"
       ></leftMenuComponent>
     </el-sub-menu>
-    <!-- 不含子级 -->
     <el-menu-item
       v-if="item.meta?.type == 'link' && !item.meta?.isHidden"
       :index="parentPath + item.path"
