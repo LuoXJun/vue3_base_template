@@ -12,11 +12,11 @@ const store = useMenuStore();
 
 // 删除本地菜单数据
 window.addEventListener('beforeunload', function () {
-  sessionStorage.setItem('state', JSON.stringify(store.$state))
+  sessionStorage.setItem('state', JSON.stringify(store.$state));
 });
 
 window.addEventListener('load', function () {
-  sessionStorage.removeItem('state');
+  sessionStorage.removeItem('state')
 });
 </script>
 
