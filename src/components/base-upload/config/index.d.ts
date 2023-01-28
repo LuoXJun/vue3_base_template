@@ -1,3 +1,5 @@
+/** @format */
+
 import type { UploadUserFile } from 'element-plus';
 
 type TlistType = 'text' | 'picture' | 'picture-card';

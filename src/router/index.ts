@@ -1,3 +1,5 @@
+/** @format */
+
 import {
   createRouter,
   createWebHashHistory,
@@ -48,6 +50,7 @@ const router = createRouter({
   scrollBehavior() {
     return { top: 0 };
   },
+  // query传参加密
   stringifyQuery,
   parseQuery
 });
@@ -79,9 +82,9 @@ router.beforeEach((to, _, next) => {
   const token = sessionStorage.getItem('token');
   store.$state.query = to.query;
 
-  setRouteView(to);
-
   if (!token) return to.path !== '/login' ? next('/login') : next();
+
+  setRouteView(to);
 
   if (to.path == '/login') {
     sessionStorage.removeItem('token');

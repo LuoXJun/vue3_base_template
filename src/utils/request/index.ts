@@ -1,3 +1,5 @@
+/** @format */
+
 import { AxiosResponse } from 'axios';
 import { ElMessage } from 'element-plus';
 import BaseRequest from './base_request';

@@ -1,3 +1,5 @@
+/** @format */
+
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import AutoImport from 'unplugin-auto-import/vite';
@@ -58,7 +60,7 @@ const config: UserConfigExport = {
   },
   server: {
     host: true,
-    port: 3005, //启动端口
+    port: 3005,
     hmr: true,
     open: true,
     proxy: {
@@ -103,11 +105,6 @@ export default defineConfig(({ command }) => {
     plugins.push(
       unElementPlus({
         useSource: true
-      })
-    );
-    plugins.push(
-      Components({
-        resolvers: [ElementPlusResolver()]
       })
     );
     return { ...config, ...buildConfig };

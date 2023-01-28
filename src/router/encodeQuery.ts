@@ -1,3 +1,5 @@
+/** @format */
+
 import type { LocationQuery, LocationQueryRaw } from 'vue-router';
 import JSEncrypt from 'jsencrypt';
 const PUBLIC_KEY = `MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA3NmujPVOafessxYOwvhW

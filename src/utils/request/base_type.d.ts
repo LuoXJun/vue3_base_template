@@ -1,3 +1,5 @@
+/** @format */
+
 import { AxiosRequestConfig, AxiosResponse } from 'axios';
 
 declare global {

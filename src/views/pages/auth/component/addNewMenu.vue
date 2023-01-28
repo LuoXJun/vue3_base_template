@@ -1,3 +1,5 @@
+<!-- @format -->
+
 <template>
   <div>
     <baseForm ref="authFormRef" v-model="form" :form-item-list="config">
@@ -108,7 +110,7 @@ const _recursion = (_menus: RouteOptions[]) => {
 const add = () => {
   authFormRef.value?.validate().then(() => {
     if (form.value.level == '') return store.menu.push(form.value);
-    _recursion(store.menu);
+    return _recursion(store.menu);
   });
 };
 </script>

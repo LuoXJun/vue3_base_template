@@ -1,3 +1,5 @@
+/** @format */
+
 export const formConfig: IformItem[] = [
   {
     filed: 'select',

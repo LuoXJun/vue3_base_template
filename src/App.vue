@@ -1,3 +1,5 @@
+<!-- @format -->
+
 <template>
   <el-config-provider :locale="zhCn">
     <router-view></router-view>
@@ -8,6 +10,7 @@
 import { ElConfigProvider } from 'element-plus';
 import zhCn from 'element-plus/lib/locale/lang/zh-cn';
 import { useMenuStore } from '@/store/useMenu';
+
 const store = useMenuStore();
 
 // 删除本地菜单数据

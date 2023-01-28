@@ -1,3 +1,5 @@
+/** @format */
+
 export const routeConfig: RouteOptions[] = [
   {
     path: '/',

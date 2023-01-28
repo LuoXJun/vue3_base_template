@@ -1,3 +1,5 @@
+<!-- @format -->
+
 <!-- 类表格列表 -->
 <template>
   <div class="base-list-class">

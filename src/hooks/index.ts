@@ -1,3 +1,5 @@
+/** @format */
+
 import { useStreamToBase64 } from './useBlobToBase64';
 import { useDeepClone } from './useDeepClone';
 import { useDetectZoom } from './useDetectZoom';

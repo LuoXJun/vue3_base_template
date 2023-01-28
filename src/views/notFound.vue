@@ -1,3 +1,5 @@
+<!-- @format -->
+
 <template>
   <div class="notFound" @click="router.push('/')"></div>
 </template>

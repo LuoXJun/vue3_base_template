@@ -1,3 +1,5 @@
+<!-- @format -->
+
 <template>
   <div class="base-upload">
     <el-upload
@@ -82,7 +84,7 @@ const onChange = (file: UploadFiles, filelist: UploadFiles[]) => {
     );
 
   filelist.splice(index + 1, 0, file);
-  emits('change', file, filelist);
+  return emits('change', file, filelist);
 };
 
 const beforeRemove = (

@@ -1,3 +1,5 @@
+<!-- @format -->
+
 <template>
   <div class="base-elipsis">
     <p ref="textRef" class="text">
@@ -40,6 +42,7 @@ const setText = () => {
   if (height <= 26 * props.line) return (isShow.value = '');
   if (height > 27 * props.line) return (isShow.value = 'close');
   isShow.value = 'exp';
+  return;
 };
 
 const operation = (type: 'exp' | 'close') => {

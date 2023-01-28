@@ -1,3 +1,5 @@
+/** @format */
+
 // 监测传入数据类型
 const checkType = (data: any) => {
   return Object.prototype.toString.call(data).slice(8, -1);

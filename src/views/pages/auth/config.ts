@@ -1,3 +1,5 @@
+/** @format */
+
 export const config: IformItem[] = [
   {
     filed: 'title',

@@ -1,3 +1,5 @@
+<!-- @format -->
+
 <template>
   <div>
     <div>A-b</div>

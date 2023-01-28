@@ -1,3 +1,5 @@
+/** @format */
+
 let BASE_URL: string;
 const TIME_OUT = window.TIME_OUT;
 switch (import.meta.env.MODE) {

@@ -1,3 +1,5 @@
+/** @format */
+
 type Turl = string | ArrayBuffer | null | undefined;
 
 export const useStreamToBase64 = (data: Blob | Blob[]) => {

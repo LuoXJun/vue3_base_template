@@ -1,3 +1,5 @@
+<!-- @format -->
+
 <template>
   <div class="result">
     <baseForm v-model="form" :form-item-list="formConfig">

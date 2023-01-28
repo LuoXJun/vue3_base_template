@@ -3,7 +3,10 @@
  * 1、作为菜单组渲染  type==menu
  * 2、作为菜单按钮渲染  type==link
  * 3、作为菜单按钮级别页面的子页面
+ *
+ * @format
  */
+
 import { RouteRecordRaw, RouterView } from 'vue-router';
 import router from '@/router';
 import Layout from '@/views/layout.vue';

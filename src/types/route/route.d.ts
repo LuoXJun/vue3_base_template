@@ -1,3 +1,5 @@
+/** @format */
+
 interface RouteOptions {
   path: string;
   /**路径默认为  views/pages/**\/index.vue  */

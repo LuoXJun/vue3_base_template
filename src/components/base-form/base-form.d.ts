@@ -1,3 +1,5 @@
+/** @format */
+
 // 允许的表单元素
 type itemType =
   | 'input'

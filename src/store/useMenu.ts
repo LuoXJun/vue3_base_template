@@ -1,15 +1,14 @@
+/** @format */
+
 import { defineStore } from 'pinia';
 
-interface Istate {
+interface UseMenu {
   menu: RouteOptions[];
   query: Record<string, any>;
 }
 
-const state: Istate = JSON.parse(sessionStorage.getItem('state') as string) || {
-  menu: <RouteOptions[]>[],
-  query: <Record<string, any>>{}
-};
-console.log(state);
+const state =
+  <UseMenu>JSON.parse(sessionStorage.getItem('state') as string) || <UseMenu>{};
 
 export const useMenuStore = defineStore('menu', {
   state: () => {

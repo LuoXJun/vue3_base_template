@@ -1,3 +1,5 @@
+<!-- @format -->
+
 <template>
   <div>
     <div @click="goPath">detail（click me reback）</div>

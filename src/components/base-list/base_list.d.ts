@@ -1,3 +1,5 @@
+/** @format */
+
 interface ITableList {
   label?: string;
   value?: string | number;

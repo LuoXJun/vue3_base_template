@@ -1,3 +1,5 @@
+/** @format */
+
 import request from '@/utils/request/index';
 
 export const getListApi = (data: any) => {

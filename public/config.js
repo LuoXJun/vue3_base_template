@@ -1,3 +1,5 @@
+/** @format */
+
 window.BASE_URL = {
   devUrl: '/dev',
   prodUrl: '',

@@ -1,3 +1,5 @@
+<!-- @format -->
+
 <template>
   <div class="base-table">
     <el-table
