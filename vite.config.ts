@@ -10,10 +10,15 @@ import ElementPlus from 'unplugin-element-plus/vite';
 import Icons from 'unplugin-icons/vite';
 import IconsResolver from 'unplugin-icons/resolver';
 import { UserConfigExport } from 'vite';
+import checker from 'vite-plugin-checker';
 import * as path from 'path';
 
 const plugins = [
   vue(),
+  checker({
+    typescript: true,
+    vueTsc: true
+  }),
   AutoImport({
     dts: 'src/types/autoImport/auto-import.d.ts',
     imports: ['vue', 'vue-router'],
@@ -54,7 +59,7 @@ const config: UserConfigExport = {
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@use '@/styles/index.scss';`
+        additionalData: `@use '@/styles/index.scss' as *;`
       }
     }
   },

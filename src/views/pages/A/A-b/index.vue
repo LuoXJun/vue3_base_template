@@ -3,7 +3,10 @@
 <template>
   <div>
     <div>A-b</div>
-    <baseImgVue img-url="/imgs/notFound.jpeg" />
+    <!-- 静态资源动态引入 -->
+    <baseImgVue img-url="notFound.jpeg" />
+    <!-- 直接引入 -->
+    <img src="@/assets/imgs/notFound.jpeg" alt="" />
   </div>
 </template>
 

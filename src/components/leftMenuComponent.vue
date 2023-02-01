@@ -50,6 +50,7 @@
 import * as icons from '@element-plus/icons-vue';
 import { PropType } from 'vue';
 import type { RouteRecordRaw } from 'vue-router';
+import { importImg } from '@/utils/getAssets';
 // 不想再路由中将路径写成/a/b/c的形式，需要在递归时带上父级路径
 defineProps({
   list: {
@@ -72,7 +73,7 @@ const getComponent = (value: string): { isElIcon: boolean; url: string } => {
     }
   }
 
-  const url = new URL(`../assets${value}`, import.meta.url).href;
+  const url = importImg(value);
   return { isElIcon: false, url };
 };
 </script>

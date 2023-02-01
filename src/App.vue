@@ -9,18 +9,6 @@
 <script setup lang="ts">
 import { ElConfigProvider } from 'element-plus';
 import zhCn from 'element-plus/lib/locale/lang/zh-cn';
-import { useMenuStore } from '@/store/useMenu';
-
-const store = useMenuStore();
-
-// 删除本地菜单数据
-window.addEventListener('beforeunload', function () {
-  sessionStorage.setItem('state', JSON.stringify(store.$state));
-});
-
-window.addEventListener('load', function () {
-  sessionStorage.removeItem('state');
-});
 </script>
 
 <style lang="scss">

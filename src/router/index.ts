@@ -73,24 +73,28 @@ const isReloadRoute = () => {
     return item.name == 'layout';
   })[0];
 
-  if (layout.children.length == 0) return true;
+  if (layout.children.length === 0) return true;
   return false;
 };
 
 router.beforeEach((to, _, next) => {
   const store = useMenuStore();
   const token = sessionStorage.getItem('token');
-  store.$state.query = to.query;
+  store.$patch((state) => {
+    state.query = to.query;
+  });
 
   if (!token) return to.path !== '/login' ? next('/login') : next();
 
   setRouteView(to);
 
-  if (to.path == '/login') {
+  if (to.path === '/login') {
     sessionStorage.removeItem('token');
     return next();
   }
-  if (store.menu.length == 0) return next('/login');
+  if (!store.menu || store.menu.length === 0) return next('/login');
+  console.log(5566);
+
   if (!isReloadRoute()) return next();
 
   setRoute(getRoutes(store.menu));

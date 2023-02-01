@@ -13,7 +13,9 @@ const store = useMenuStore();
 const router = useRouter();
 
 const login = () => {
-  store.$state.menu = routeConfig;
+  store.$patch((state) => {
+    state.menu = routeConfig;
+  });
   sessionStorage.setItem('token', '123');
   router.push('/');
 };

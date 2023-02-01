@@ -22,6 +22,7 @@
 
 <script setup lang="ts">
 import leftMenuComponent from '@/components/leftMenuComponent.vue';
+import { RouteRecordRaw } from 'vue-router';
 import { getRoutes, setRoute } from '@/router/getRoutes';
 import { useMenuStore } from '@/store/useMenu';
 
@@ -38,10 +39,11 @@ defineProps({
 
 const store = useMenuStore();
 
-const renderList = ref();
+const renderList = ref<RouteRecordRaw[]>([]);
 const parentPath = '/';
+
 watch(
-  store.$state,
+  store,
   () => {
     renderList.value = getRoutes(store.menu);
     // menu更新后视图和路由不同步，需注册新添加的路由
