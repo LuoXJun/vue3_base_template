@@ -93,7 +93,6 @@ router.beforeEach((to, _, next) => {
     return next();
   }
   if (!store.menu || store.menu.length === 0) return next('/login');
-  console.log(5566);
 
   if (!isReloadRoute()) return next();
 

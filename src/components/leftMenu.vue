@@ -43,7 +43,7 @@ const renderList = ref<RouteRecordRaw[]>([]);
 const parentPath = '/';
 
 watch(
-  store,
+  store.menu,
   () => {
     renderList.value = getRoutes(store.menu);
     // menu更新后视图和路由不同步，需注册新添加的路由

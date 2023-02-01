@@ -12,7 +12,6 @@ declare module '@vue/runtime-core' {
     BaseForm: typeof import('./../../components/base-form/baseForm.vue')['default']
     BaseImg: typeof import('./../../components/base-img/base-img.vue')['default']
     BaseList: typeof import('./../../components/base-list/base-list.vue')['default']
-    BasePage: typeof import('./../../components/base-page/base-page.vue')['default']
     BaseTable: typeof import('./../../components/base-table/base-table.vue')['default']
     BaseUpload: typeof import('./../../components/base-upload/base-upload.vue')['default']
     ElAside: typeof import('element-plus/es')['ElAside']

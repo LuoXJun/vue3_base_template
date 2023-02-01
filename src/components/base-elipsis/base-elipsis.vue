@@ -63,7 +63,6 @@ const operation = (type: 'exp' | 'close') => {
   .text {
     color: #fff;
     width: 100%;
-    // max-height: 52px;
     overflow: hidden;
     word-break: break-all;
     line-height: 26px;

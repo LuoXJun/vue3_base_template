@@ -1,11 +1,7 @@
 <!-- @format -->
 
-<!-- 类表格列表 -->
 <template>
   <div class="base-list-class">
-    <div class="base-list-title">
-      <slot name="title"></slot>
-    </div>
     <div class="base-list-container">
       <el-row>
         <el-row
@@ -67,11 +63,6 @@ defineProps({
 <style lang="scss" scoped>
 .base-list-class {
   margin: 20px 0;
-  .base-list-title {
-    border-left: 4px solid $primary;
-    padding: 0 20px;
-    margin-bottom: 20px;
-  }
 
   .base-list-container {
     border: 1px solid #caced1;

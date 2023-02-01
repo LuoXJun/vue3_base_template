@@ -95,8 +95,8 @@ const buildConfig: UserConfigExport = {
           lodash: ['lodash']
         }
       }
-    },
-    sourcemap: true
+    }
+    // sourcemap:true
   },
   esbuild: {
     drop: ['debugger', 'console']

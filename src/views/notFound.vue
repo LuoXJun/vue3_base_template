@@ -1,12 +1,10 @@
 <!-- @format -->
 
 <template>
-  <div class="notFound" @click="router.push('/')"></div>
+  <div class="notFound" @click="$router.push('/')"></div>
 </template>
 
-<script setup lang="ts">
-import router from '@/router';
-</script>
+<script setup lang="ts"></script>
 
 <style scoped>
 .notFound {

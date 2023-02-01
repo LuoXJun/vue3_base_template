@@ -5,8 +5,9 @@
     <el-dialog
       :model-value="modelValue"
       :title="title"
-      top="5vh"
       :width="width"
+      :before-close="handleClose"
+      top="5vh"
     >
       <slot name="content">132</slot>
       <slot name="footer">
@@ -53,6 +54,12 @@ const close = () => {
 
 const confirm = () => {
   emits('confirm');
+};
+
+const handleClose = (done: () => void) => {
+  done();
+  // 不调用此方法会导致点击x关闭模态框后无法再次显示
+  emits('update:modelValue', false);
 };
 </script>
 

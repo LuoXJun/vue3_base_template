@@ -9,7 +9,7 @@
       :auto-upload="false"
       :list-type="options.listType"
       :file-list="list"
-      :multiple="options.size == 1 ? false : true"
+      :multiple="options.size === 1 ? false : true"
       :on-change="onChange"
       :before-remove="beforeRemove"
       :on-preview="preview"

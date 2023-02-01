@@ -19,7 +19,7 @@
 </template>
 
 <script setup lang="ts">
-import basePageVue from '@/components/base-page/base-page.vue';
+import basePageVue from '@/combinedPage/base-page/base-page.vue';
 import baseDialogVue from '@/components/base-dialog/base-dialog.vue';
 import { formConfig, tableConfig } from './config';
 const total = ref(0);
