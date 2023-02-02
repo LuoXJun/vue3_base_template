@@ -1,5 +1,3 @@
-/** @format */
-
 import { defineStore } from 'pinia';
 
 export const getMenuStore = defineStore('getMenuStore', {

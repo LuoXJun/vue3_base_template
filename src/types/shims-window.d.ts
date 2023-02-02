@@ -1,5 +1,3 @@
-/** @format */
-
 declare interface Window {
   BASE_URL: {
     devUrl: string;

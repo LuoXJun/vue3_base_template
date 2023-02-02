@@ -1,5 +1,3 @@
-/** @format */
-
 interface ITable {
   maxHeight?: number | string;
   height?: string | number;

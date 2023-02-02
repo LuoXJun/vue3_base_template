@@ -1,5 +1,3 @@
-/** @format */
-
 export const useDetectZoom = () => {
   let ratio = 0;
   const screen = window.screen;

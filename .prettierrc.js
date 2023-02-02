@@ -1,5 +1,3 @@
-/** @format */
-
 module.exports = {
   // 一行最多 80 字符
   printWidth: 80,
@@ -19,17 +17,15 @@ module.exports = {
   trailingComma: 'none',
   // 大括号内的首尾需要空格 { foo: bar }
   bracketSpacing: true,
-  // jsx 标签的反尖括号需要换行
-  jsxBracketSameLine: false,
   // 箭头函数，只有一个参数的时候，也需要括号
   arrowParens: 'always',
   // 每个文件格式化的范围是文件的全部内容
   rangeStart: 0,
   rangeEnd: Infinity,
   // 文件开头的 @prettier
-  requirePragma: true,
+  requirePragma: false,
   // 自动在文件开头插入 已使用prettier格式化标识
-  insertPragma: true,
+  insertPragma: false,
   // 使用默认的折行标准
   proseWrap: 'preserve',
   // 根据显示样式决定 html 要不要折行
