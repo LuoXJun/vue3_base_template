@@ -1,5 +1,3 @@
-<!-- @format -->
-
 <template>
   <div></div>
 </template>

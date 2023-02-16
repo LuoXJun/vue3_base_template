@@ -1,5 +1,3 @@
-<!-- @format -->
-
 <template>
   <div>
     <baseForm ref="authFormRef" v-model="form" :form-item-list="config">

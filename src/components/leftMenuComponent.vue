@@ -1,5 +1,3 @@
-<!-- @format -->
-
 <template>
   <template v-for="item in list" :key="item">
     <el-sub-menu

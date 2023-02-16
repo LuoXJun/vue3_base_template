@@ -1,5 +1,3 @@
-<!-- @format -->
-
 <!-- 在当前组件递归渲染数据 -->
 <template>
   <el-menu

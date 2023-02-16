@@ -1,5 +1,3 @@
-<!-- @format -->
-
 <template>
   <div class="base-elipsis">
     <p ref="textRef" class="text">

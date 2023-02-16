@@ -1,5 +1,3 @@
-<!-- @format -->
-
 <template>
   <div>
     <el-button size="large" @click="login">登录</el-button>

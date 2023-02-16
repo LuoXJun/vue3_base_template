@@ -1,5 +1,3 @@
-<!-- @format -->
-
 <template>
   <div class="base-list-class">
     <div class="base-list-container">

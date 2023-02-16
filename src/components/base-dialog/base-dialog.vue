@@ -1,5 +1,3 @@
-<!-- @format -->
-
 <template>
   <div class="base-dialog">
     <el-dialog

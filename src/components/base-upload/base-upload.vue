@@ -1,5 +1,3 @@
-<!-- @format -->
-
 <template>
   <div class="base-upload">
     <el-upload

@@ -1,5 +1,3 @@
-<!-- @format -->
-
 <template>
   <div>
     <img :src="importImgs(imgUrl)" alt="" style="width: 100px; height: 100px" />

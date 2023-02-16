@@ -1,5 +1,3 @@
-<!-- @format -->
-
 <template>
   <el-config-provider :locale="zhCn">
     <router-view></router-view>
@@ -10,7 +8,3 @@
 import { ElConfigProvider } from 'element-plus';
 import zhCn from 'element-plus/lib/locale/lang/zh-cn';
 </script>
-
-<style lang="scss">
-// @import url('@/styles/index.scss');
-</style>

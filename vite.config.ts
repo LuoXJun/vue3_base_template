@@ -65,7 +65,7 @@ const config: UserConfigExport = {
     host: true,
     port: 3005,
     hmr: true,
-    open: true,
+    open: '/index.html',
     proxy: {
       '^/dev': {
         target: 'http://192.168.3.65:8808',

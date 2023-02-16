@@ -1,7 +1,8 @@
-<!-- @format -->
-
 <template>
   <div>
+    <div>
+      <IEpEdit />
+    </div>
     <div>A-b</div>
     <!-- 静态资源动态引入 -->
     <baseImgVue img-url="notFound.jpeg" />
