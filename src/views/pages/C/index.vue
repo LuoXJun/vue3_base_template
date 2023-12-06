@@ -1,19 +1,19 @@
 <template>
-  <div>
-    <basePageVue
-      :form-config="formConfig"
-      :table-config="tableConfig"
-      :total="total"
-      :table-data="tableData"
-      @get-form="getForm"
-    >
-      <template #name="{ scope }">{{ scope }}</template>
-      <template #footer="{ item }">插槽{{ item }}</template>
-    </basePageVue>
-    <!-- base-dialog -->
-    <el-button @click="dialogVisibility = true">showDia</el-button>
-    <baseDialogVue v-model="dialogVisibility" @confirm="confirm" />
-  </div>
+    <div>
+        <basePageVue
+            :form-config="formConfig"
+            :table-config="tableConfig"
+            :total="total"
+            :table-data="tableData"
+            @get-form="getForm"
+        >
+            <template #name="{ scope }">{{ scope }}</template>
+            <template #footer="{ item }">插槽{{ item }}</template>
+        </basePageVue>
+        <!-- base-dialog -->
+        <el-button @click="dialogVisibility = true">showDia</el-button>
+        <baseDialogVue v-model="dialogVisibility" @confirm="confirm" />
+    </div>
 </template>
 
 <script setup lang="ts">
@@ -25,11 +25,11 @@ const dialogVisibility = ref(false);
 const tableData = ref([{ name: 13213123 }, { name: 199999 }]);
 
 const getForm = (form: Record<string, any>) => {
-  console.log(form);
+    console.log(form);
 };
 
 const confirm = () => {
-  console.log(123);
+    console.log(123);
 };
 </script>
 

@@ -10,12 +10,12 @@ const app = createApp(App);
 const pinia = createPinia();
 
 pinia.use(({ store }) => {
-  if (store.$id === 'menu') {
-    // 监听只会在$patch之后触发一次
-    store.$subscribe((_, state) => {
-      sessionStorage.setItem('state', JSON.stringify(state));
-    });
-  }
+    if (store.$id === 'menu') {
+        // 监听只会在$patch之后触发一次
+        store.$subscribe((_, state) => {
+            sessionStorage.setItem('state', JSON.stringify(state));
+        });
+    }
 });
 
 app.use(pinia);

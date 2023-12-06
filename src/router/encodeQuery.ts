@@ -38,17 +38,17 @@ QqzxY2K8tBEl7o7bBwwjo83qIw==
   `;
 
 export const stringifyQuery = (query: LocationQueryRaw): string => {
-  if (Object.keys(query).length == 0) return '';
+    if (Object.keys(query).length == 0) return '';
 
-  const jse = new JSEncrypt();
-  jse.setPublicKey(PUBLIC_KEY);
-  return jse.encrypt(JSON.stringify(query)) as string;
+    const jse = new JSEncrypt();
+    jse.setPublicKey(PUBLIC_KEY);
+    return jse.encrypt(JSON.stringify(query)) as string;
 };
 
 export const parseQuery = (query: string): LocationQuery => {
-  if (!query) return {};
+    if (!query) return {};
 
-  const jse = new JSEncrypt();
-  jse.setPrivateKey(priviate);
-  return JSON.parse(jse.decrypt(query) as string);
+    const jse = new JSEncrypt();
+    jse.setPrivateKey(priviate);
+    return JSON.parse(jse.decrypt(query) as string);
 };
