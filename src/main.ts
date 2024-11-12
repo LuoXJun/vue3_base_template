@@ -4,6 +4,10 @@ import router from './router';
 import { createPinia } from 'pinia';
 import 'default-passive-events';
 import 'reset.css';
+import '@/styles/index.scss';
+import engineUI from './engine-ui/dist/engine-ui';
+import './engine-ui/assets/widgets.css';
+// import './engine-ui/dist/style.css';
 
 const app = createApp(App);
 
@@ -20,5 +24,6 @@ pinia.use(({ store }) => {
 
 app.use(pinia);
 app.use(router);
+app.use(engineUI);
 
 app.mount('#app');

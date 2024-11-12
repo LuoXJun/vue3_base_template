@@ -1,14 +1,14 @@
 <template>
     <div class="result">
-        <baseForm v-model="form" :form-item-list="formConfig">
+        <BaseForm v-model="form" :form-item-list="formConfig">
             <template #footer>
                 <slot name="footer" :item="form">
                     <el-button type="primary" @click="getForm">查询</el-button>
                     <el-button @click="form = {}">重置</el-button>
                 </slot>
             </template>
-        </baseForm>
-        <baseTable
+        </BaseForm>
+        <BaseTable
             v-model="pageInfo"
             index
             :table-column="tableConfig"
@@ -20,12 +20,10 @@
                     {{ row[item.filed] }}
                 </slot>
             </template>
-        </baseTable>
+        </BaseTable>
     </div>
 </template>
 <script setup lang="ts">
-import baseForm from '@/components/base-form/baseForm.vue';
-import baseTable from '@/components/base-table/base-table.vue';
 import { PropType } from 'vue';
 const emit = defineEmits(['getForm']);
 defineProps({
@@ -57,10 +55,10 @@ watch(pageInfo, () => {
     getForm();
 });
 const getForm = () => {
-    pageInfo.value = {
-        pageIndex: 1,
-        pageSize: 10
-    };
+    // pageInfo.value = {
+    //     pageIndex: 1,
+    //     pageSize: 10
+    // };
     emit('getForm', form.value);
 };
 </script>

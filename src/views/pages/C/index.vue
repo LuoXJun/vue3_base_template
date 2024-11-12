@@ -1,6 +1,6 @@
 <template>
     <div>
-        <basePageVue
+        <BasePage
             :form-config="formConfig"
             :table-config="tableConfig"
             :total="total"
@@ -9,16 +9,14 @@
         >
             <template #name="{ scope }">{{ scope }}</template>
             <template #footer="{ item }">插槽{{ item }}</template>
-        </basePageVue>
+        </BasePage>
         <!-- base-dialog -->
         <el-button @click="dialogVisibility = true">showDia</el-button>
-        <baseDialogVue v-model="dialogVisibility" @confirm="confirm" />
+        <BaseDialog v-model="dialogVisibility" @confirm="confirm" />
     </div>
 </template>
 
 <script setup lang="ts">
-import basePageVue from '@/combinedPage/base-page/base-page.vue';
-import baseDialogVue from '@/components/base-dialog/base-dialog.vue';
 import { formConfig, tableConfig } from './config';
 const total = ref(0);
 const dialogVisibility = ref(false);

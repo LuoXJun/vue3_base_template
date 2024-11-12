@@ -18,11 +18,11 @@
             <el-button type="primary" link @click="drawer = true">新建菜单</el-button>
         </el-card>
         <el-drawer v-model="drawer" :with-header="false" direction="ttb" size="50%">
-            <addNewMenuVue :options="getCheckedKeys(data)._keyvalue">
+            <AddNewMenu :options="getCheckedKeys(data)._keyvalue">
                 <template #cancel>
                     <el-button @click="drawer = false">取消</el-button>
                 </template>
-            </addNewMenuVue>
+            </AddNewMenu>
         </el-drawer>
     </div>
 </template>
@@ -31,7 +31,7 @@
 import { ElTree } from 'element-plus';
 import { useMenuStore } from '@/store/useMenu';
 import { useDeepClone } from '@/hooks/useDeepClone';
-import addNewMenuVue from './component/addNewMenu.vue';
+import AddNewMenu from './component/addNewMenu.vue';
 const store = useMenuStore();
 
 const defaultProps = ref({ children: 'children', label: 'title' });

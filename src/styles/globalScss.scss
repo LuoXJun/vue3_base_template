@@ -1,0 +1,14 @@
+// elementPlus基本颜色
+$primary: #409eff;
+$danger: #f56c6c;
+$warning: #e6a23c;
+$success: #67c23a;
+$info: #909399;
+
+// display基本布局
+@mixin base-flex($justify: center, $wrap: wrap) {
+    display: flex;
+    justify-content: $justify;
+    align-items: center;
+    flex-wrap: $wrap;
+}

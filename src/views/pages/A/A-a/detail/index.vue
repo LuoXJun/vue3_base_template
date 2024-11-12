@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div @click="goPath">detail（click me reback）</div>
+        <el-button @click="goPath">detail（click me reback）</el-button>
         <div>{{ $route.query }}</div>
         <el-button @click="$router.push({ path: '/A/A-a/detail/detailChild' })">
             进入下一级

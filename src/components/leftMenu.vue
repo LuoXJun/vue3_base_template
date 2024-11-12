@@ -17,12 +17,11 @@
                 <img src="../assets/logo.png" />
             </p>
         </template>
-        <leftMenuComponent :list="store.getRoutes(store.menu)" :parent-path="parentPath" />
+        <LeftMenuComponent :list="store.getRoutes(store.menu)" :parent-path="parentPath" />
     </el-menu>
 </template>
 
 <script setup lang="ts">
-import leftMenuComponent from '@/components/leftMenuComponent.vue';
 import { useMenuStore } from '@/store/useMenu';
 
 defineProps({

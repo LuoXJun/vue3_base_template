@@ -48,26 +48,6 @@ body,
     border-radius: 10px;
 }
 
-// transparentize相减  opacify相加
-// 项目基本颜色
-$color: #000;
-$bgcolor: #fff;
-
-// elementPlus基本颜色
-$primary: #409eff;
-$danger: #f56c6c;
-$warning: #e6a23c;
-$success: #67c23a;
-$info: #909399;
-
-// display基本布局
-@mixin base-flex($justify: center, $wrap: wrap) {
-    display: flex;
-    justify-content: $justify;
-    align-items: center;
-    flex-wrap: $wrap;
-}
-
 .el-select,
 .el-input,
 .el-date-editor {

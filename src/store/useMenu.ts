@@ -11,7 +11,6 @@ interface UseMenu {
     isNeedUpdate: boolean;
     isCollapse: boolean;
 }
-
 /**
  * 必须初始化，否则使用$patch改变值后，不能监听到值的变化
  * */

@@ -122,7 +122,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, PropType } from 'vue';
+import { PropType } from 'vue';
 import type { FormInstance, FormRules } from 'element-plus';
 import { ElMessage } from 'element-plus';
 

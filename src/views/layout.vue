@@ -2,7 +2,7 @@
     <div class="common-layout templateClass">
         <el-container>
             <el-aside class="menu-aside">
-                <leftMenu title="template" :is-collapse="store.isCollapse" />
+                <LeftMenu title="template" :is-collapse="store.isCollapse" />
             </el-aside>
             <el-container>
                 <el-header style="height: auto">
@@ -16,7 +16,7 @@
                                 })
                             "
                         />
-                        <headerNav></headerNav>
+                        <HeaderNav></HeaderNav>
                     </el-row>
                 </el-header>
                 <el-main style="background-color: #e4e7ed">
@@ -30,8 +30,6 @@
 </template>
 
 <script setup lang="ts">
-import leftMenu from '@/components/leftMenu.vue';
-import headerNav from '@/components/headerNav.vue';
 import { useMenuStore } from '@/store/useMenu';
 const store = useMenuStore();
 
